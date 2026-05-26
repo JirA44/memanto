@@ -248,8 +248,8 @@ def recall(
     memory_type: str | None = typer.Option(
         None, "--type", "-t", help="Filter by memory type"
     ),
-    min_confidence: float | None = typer.Option(
-        None, "--min-confidence", help="Minimum confidence score"
+    min_similarity: float | None = typer.Option(
+        None, "--min-similarity", help="Minimum similarity score"
     ),
     tags: str | None = typer.Option(
         None, "--tags", help="Filter by tags (comma-separated)"
@@ -363,7 +363,7 @@ def recall(
                     limit=limit,
                     type=type,
                     tags=tag_list,
-                    min_confidence=min_confidence,
+                    min_similarity=min_similarity,
                 )
             else:
                 _error(
