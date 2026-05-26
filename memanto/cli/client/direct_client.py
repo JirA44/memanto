@@ -734,6 +734,7 @@ class DirectClient:
         limit: int | None = None,
         type: list[str] | None = None,
         tags: list[str] | None = None,
+        min_similarity: float | None = None,
         min_confidence: float | None = None,
         created_after: datetime | None = None,
         created_before: datetime | None = None,
@@ -747,6 +748,7 @@ class DirectClient:
             limit: Max results (1–100, defaults to config).
             type: Filter by types (e.g. ``["fact", "decision"]``).
             tags: Filter by tags.
+            min_similarity: Minimum similarity threshold.
             min_confidence: Minimum confidence threshold.
             created_after: Only memories created after this datetime.
             created_before: Only memories created before this datetime.
@@ -758,7 +760,8 @@ class DirectClient:
         recall_cfg = ConfigManager().get_recall_config()
         if limit is None:
             limit = recall_cfg["limit"]
-        min_similarity = recall_cfg.get("min_similarity")
+        if min_similarity is None:
+            min_similarity = recall_cfg.get("min_similarity")
 
         # Ensure there is a valid, non-expired session for this agent
         self._get_validated_session_for_agent(agent_id)
