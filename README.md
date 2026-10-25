@@ -1,3 +1,13 @@
+## Français
+
+Outil de mémoire pour agents IA, destiné à conserver et retrouver des informations utiles au fil des tâches. Exemple : enregistrer un contexte puis le rechercher dans une session ultérieure.
+
+## English
+
+A memory tool for AI agents, designed to retain and retrieve useful information across tasks. Example: save context and retrieve it in a later session.
+
+---
+
 <p align="center">
     <a href="https://www.memanto.ai/">
     <img alt="MEMANTO Logo" src="https://github.com/moorcheh-ai/memanto/raw/main/assets/memanto-dark.svg" width="500">
